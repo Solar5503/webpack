@@ -1,5 +1,5 @@
 import mushroom from './assets/saxon.jpg';
-import './styles.css';
+import './styles.scss';
 import arr, { funcA } from './sub';
 
 function component() {

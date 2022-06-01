@@ -1,3 +1,7 @@
+%tplborder {
+  border: 2px solid red;
+}
+
 body {
   background-color: grey;
 }
@@ -5,4 +9,5 @@ body {
 img {
   width: 200px;
   height: auto;
+  @extend %tplborder;
 }
