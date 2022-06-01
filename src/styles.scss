@@ -1,9 +1,19 @@
 %tplborder {
-  border: 2px solid red;
+  border: 2px solid rgb(112, 1, 1);
 }
 
 body {
   background-color: grey;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  font-size: 5rem;
+  div {
+    padding: 1rem;
+    @extend %tplborder;
+  }
 }
 
 img {
