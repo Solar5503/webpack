@@ -20,7 +20,7 @@ module.exports = {
       },
       {
         test: /\.m?jsx$/,
-        exclude: /(node_modules|bower_components)/,
+        exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
           options: {
@@ -34,21 +34,21 @@ module.exports = {
       { test: /\.tsx?$/, use: 'ts-loader' },
     ],
   },
-  optimization: {
-    nodeEnv: 'development',
-  },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js',
+    filename: 'bundle-[contenthash].js',
+    clean: true,
+    assetModuleFilename: '[name][ext]',
   },
   plugins: [
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: './src/index.html',
     }),
-    // new BundleAnalyzerPlugin(),
+    new BundleAnalyzerPlugin(),
   ],
   resolve: {
-    extensions: ['.tsx', '.ts', '.js', '.jsx', '...'],
+    extensions: ['.tsx', '.ts', '.jsx', '.js', '...'],
   },
+  devtool: 'source-map',
 };
