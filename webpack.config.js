@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const BundleAnalyzerPlugin =
   require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 module.exports = {
-  entry: './src/index.jsx',
+  entry: './src/index.tsx',
   module: {
     rules: [
       {
@@ -31,6 +31,7 @@ module.exports = {
           },
         },
       },
+      { test: /\.tsx?$/, use: 'ts-loader' },
     ],
   },
   optimization: {
@@ -45,9 +46,9 @@ module.exports = {
       filename: 'index.html',
       template: './src/index.html',
     }),
-    new BundleAnalyzerPlugin(),
+    // new BundleAnalyzerPlugin(),
   ],
   resolve: {
-    extensions: ['.js', '.jsx', '.ts', '.tsx', '...'],
+    extensions: ['.tsx', '.ts', '.js', '.jsx', '...'],
   },
 };
