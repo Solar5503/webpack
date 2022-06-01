@@ -1,5 +1,6 @@
 import mushroom from './assets/saxon.jpg';
 import './styles.css';
+import arr, { funcA } from './sub';
 
 function component() {
   const element = document.createElement('label');
@@ -19,4 +20,5 @@ function imageComponent() {
 
 document.body.appendChild(component());
 document.body.appendChild(imageComponent());
-console.log('Run');
+console.log(arr);
+funcA();
